@@ -47,51 +47,53 @@ const WeCanDo = () => {
         },
     ];
     return (
+<div className="py-20 bg-gray-50">
+  <div className="max-w-6xl mx-auto px-4">
+    <h1 className="text-center text-4xl font-medium mb-6">
+      How we support your needs
+    </h1>
 
-        <div className='WeCanDo-section'>
-        <Container style={{padding:'75px 0 '}} maxWidth='lg'>
-        <h1>How we support your needs </h1>
+    <p className="text-center text-lg font-light mb-8">
+      Whether going through the first phase of mapping out the MVP or developing a back-end for your core product, our team is ready to support you with expert UX/UI design, software development, and cloud modernization.
+    </p>
 
-        <p className='under-main-title'>
-        Whether going through the first phase of mapping out the MVP or developing a back-end for your core product, our team is ready to support you with expert UX/UI design, software development, and cloud modernization.
+    <div className="space-y-4">
+      {content.map((item) => (
+        <div key={item.id} className="rounded-lg shadow-md border">
+          <div
+            className={`flex items-center p-4 cursor-pointer ${
+              openIndex === item.id ? "bg-teal-50" : ""
+            }`}
+            onClick={() => handleToggle(item.id)}
+          >
+            {openIndex === item.id ? (
+              <RemoveIcon className="text-teal-600 mr-2" />
+            ) : (
+              <AddIcon className="text-teal-600 mr-2" />
+            )}
+            <h3 className="text-md font-semibold">{item.title}</h3>
+          </div>
 
-
-        </p>
-
-
-
-        <div className='ContainerCollapse'>
-                            <div>
-                                {content.map((item) => (
-                                    <div className='collapse-box' key={item.id}>
-                                        <div className={openIndex === item.id ? 'no-border IconButton active' : 'border IconButton'}  onClick={() => handleToggle(item.id)}>
-                                            {openIndex === item.id ? <RemoveIcon className='iconStyle' /> : <AddIcon className='iconStyle' />}
-                                            <h3 
-                                                
-                                                onClick={() => handleToggle(item.id)}
-                                            >
-                                                {item.title}
-                                            </h3>
-                                        </div>
-                                        <Collapse in={openIndex === item.id} className='Collapse'>
-                                            {item.point && item.point.length > 0 ? (
-                                                <ul>
-                                                    {item.point.map((ele, index) => (
-                                                        <li style={{color:"red"}} key={index}>{`${ele} ${index}`}</li>
-                                                    ))}
-                                                </ul>
-                                            ) : (
-                                                <p className={openIndex === item.id ? 'border' : 'no-border'}>
-                                                    {item.description}
-                                                </p>
-                                            )}
-                                        </Collapse>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-        </Container>
+          <Collapse in={openIndex === item.id}>
+            <div className="p-4">
+              {item.point && item.point.length > 0 ? (
+                <ul className="list-disc pl-6">
+                  {item.point.map((ele, index) => (
+                    <li key={index}>{`${ele} ${index}`}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p>{item.description}</p>
+              )}
+            </div>
+          </Collapse>
         </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+      
 
 
     );

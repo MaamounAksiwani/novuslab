@@ -15,10 +15,7 @@ const ServicesTypet = () => {
     setTitle(serviceTitle);
   };
 
-
   useEffect(() => {
-    // const wow = new WOW.WOW();
-    // wow.init();
     window.scrollTo(0, 0);
     document.title = "Services | Novuslab";
 
@@ -29,75 +26,67 @@ const ServicesTypet = () => {
 
   return (
     <>
-        <section style={{ padding: '100px 0' }}>
-      <Container maxWidth='lg'>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <KeyboardBackspaceIcon style={{ fontSize: '30px' }} />
-          <h2 style={{ fontWeight: '500', fontSize: '24px' }}>Back to Services</h2>
+    <section className="py-24">
+      <Container maxWidth="lg">
+        <div className="flex items-center gap-2">
+          <KeyboardBackspaceIcon className="text-3xl" />
+          <h2 className="font-medium text-2xl">Back to Services</h2>
         </div>
-
-        <div className='services-options'>
+  
+        <div className="services-options grid md:grid-cols-2 gap-6 mt-8">
           <div>
             <h2
-              style={{ fontWeight: '500', fontSize: '20px', cursor: 'pointer' }}
+              className="font-medium text-xl cursor-pointer"
               onClick={() => handleServiceClick('uxui', 'UX / UI Design')}
             >
               UX / UI Design
             </h2>
             <h2
-              style={{ fontWeight: '500', fontSize: '20px', cursor: 'pointer' }}
+              className="font-medium text-xl cursor-pointer"
               onClick={() => handleServiceClick('mobileApp', 'Mobile App Development')}
             >
               Mobile App Development
             </h2>
             <h2
-              style={{ fontWeight: '500', fontSize: '20px', cursor: 'pointer' }}
+              className="font-medium text-xl cursor-pointer"
               onClick={() => handleServiceClick('webDev', 'Web & Back-End Development')}
             >
               Web & Back-End Development
             </h2>
-
-
-
+  
             <h2
-              style={{ fontWeight: '500', fontSize: '20px', cursor: 'pointer' }}
-              onClick={() => handleServiceClick('webDev', 'Web & Back-End Development')}
+              className="font-medium text-xl cursor-pointer"
+              onClick={() => handleServiceClick('webDev', 'Maintenance and Support')}
             >
               Maintenance and Support
             </h2>
-
+  
             <h2
-              style={{ fontWeight: '500', fontSize: '20px', cursor: 'pointer' }}
-              onClick={() => handleServiceClick('webDev', 'Web & Back-End Development')}
+              className="font-medium text-xl cursor-pointer"
+              onClick={() => handleServiceClick('webDev', 'E-Commerce Solutions')}
             >
-               E-Commerce Solutions
+              E-Commerce Solutions
             </h2>
-
+  
             <h2
-              style={{ fontWeight: '500', fontSize: '20px', cursor: 'pointer' }}
-              onClick={() => handleServiceClick('webDev', 'Web & Back-End Development')}
+              className="font-medium text-xl cursor-pointer"
+              onClick={() => handleServiceClick('webDev', 'Brand Identity and Branding')}
             >
-               Brand Identity and Branding
-
-
+              Brand Identity and Branding
             </h2>
-
-{/*  E-Commerce Solutions */}
-            {/* 6. Maintenance and Support
-
- */}
           </div>
-
+  
           <div>
-            <h1  style={{textAlign:'center' , fontSize:'28px' , fontWeight:'500'}}>{title}</h1>
+            <h1 className="text-center text-2xl font-medium">{title}</h1>
           </div>
         </div>
       </Container>
       {selectedService === 'uxui' && <UXAndUIDesign />}
-        {selectedService === 'mobileApp' && <MobileApp />}
-        {selectedService === 'webDev' && <WebDevelopment />}
+      {selectedService === 'mobileApp' && <MobileApp />}
+      {selectedService === 'webDev' && <WebDevelopment />}
     </section>
-    </>
+  </>
+  
 
   );
 };

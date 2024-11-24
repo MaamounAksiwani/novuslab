@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { Container } from '@mui/material';
+import React from 'react';
 import { useNavigate } from 'react-router';
 import EmailIcon from '@mui/icons-material/Email';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import PhoneIcon from '@mui/icons-material/Phone';
-
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import '../App.css';
-// import logo from '../../until/image/energysabal-white.svg';
-
 
 const Footer = () => {
     const navigate = useNavigate();
@@ -16,75 +10,65 @@ const Footer = () => {
         navigate(path);
     };
     return (
-        <footer class="footer">
-            <Container maxWidth='lg'>
-                <div class="container row">
-                    <div class="footer-col">
-                        <img src='https://www.novuslab.io/logo.svg' alt='' />
-                        <ul style={{ listStyle: "none", padding: 0 }}>
-                            <li style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-                                <PhoneIcon style={{ marginRight: "10px" }} /> +49 176 20092661
+        <footer className="bg-teal-800 py-20">
+            <div className="container mx-auto max-w-screen-lg">
+                <div className="flex flex-wrap -mx-4">
+                    <div className="footer-col w-full md:w-1/2 lg:w-1/4 px-4">
+                        <img
+                            src="https://www.novuslab.io/logo.svg"
+                            alt="Novus Lab Logo"
+                            className="w-36 h-12 my-4"
+                        />
+                        <ul className="list-none space-y-2">
+                            <li className="flex items-center text-gray-300">
+                                <PhoneIcon className="mr-2" /> +49 176 20092661
                             </li>
-                            <li style={{ display: "flex", alignItems: "center", marginBottom: "10px" }}>
-                                <AddLocationIcon style={{ marginRight: "10px" }} /> Business Center 1, Business C, Nad Al Sheba Meydan Dubai, P.O. Box 123654 Dubai, United Arab Emirates
+                            <li className="flex items-center text-gray-300">
+                                <AddLocationIcon className="mr-2" />
+                                Business Center 1, Business C, Nad Al Sheba Meydan Dubai, P.O. Box 123654 Dubai, United Arab Emirates
                             </li>
-                            <li style={{ display: "flex", alignItems: "center" }}>
-                                <EmailIcon style={{ marginRight: "10px" }} /> Noculab@gmail.com
+                            <li className="flex items-center text-gray-300">
+                                <EmailIcon className="mr-2" /> Noculab@gmail.com
                             </li>
                         </ul>
-
                     </div>
-
-                    <div class="footer-col">
-                        <h4>Installation</h4>
-                        <ul>
-                            <li onClick={() => handleLinkClick('/About')}>Installation</li>
-                            <li>Installation</li>
-                            <li>Terms & Conditions</li>
-                            <li>Privacy Policy</li>
-
-
-                        </ul>
-
-                    </div>
-
-
-                    <div class="footer-col">
-                        <h4>Explore</h4>
-                        <ul>
-                            <li onClick={() => handleLinkClick('/Plan')}>Installation</li>
-                            <li onClick={() => handleLinkClick('/Report')}>Installation</li>
-                            <li onClick={() => handleLinkClick('/Contractor')}>Installation</li>
-                            <li onClick={() => handleLinkClick('/Contact')}>Installation</li>
+                    <div className="footer-col w-full md:w-1/2 lg:w-1/4 px-4">
+                        <h4 className="text-white text-lg font-medium mb-6 border-b-2 border-white inline-block pb-1">
+                            Installation
+                        </h4>
+                        <ul className="list-none space-y-2">
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Installation</li>
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Terms & Conditions</li>
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Privacy Policy</li>
                         </ul>
                     </div>
-
-
-
-                    <div class="footer-col">
-                        <h4>Information</h4>
-                        <ul>
-                            <li onClick={() => handleLinkClick('/About')}>Installation</li>
-                            <li>Installation</li>
-                            <li>Terms & Conditions</li>
-                            <li>Privacy Policy</li>
-
-
+                    <div className="footer-col w-full md:w-1/2 lg:w-1/4 px-4">
+                        <h4 className="text-white text-lg font-medium mb-6 border-b-2 border-white inline-block pb-1">
+                            Explore
+                        </h4>
+                        <ul className="list-none space-y-2">
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Installation</li>
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Installation</li>
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Installation</li>
                         </ul>
                     </div>
-
+                    <div className="footer-col w-full md:w-1/2 lg:w-1/4 px-4">
+                        <h4 className="text-white text-lg font-medium mb-6 border-b-2 border-white inline-block pb-1">
+                            Information
+                        </h4>
+                        <ul className="list-none space-y-2">
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Installation</li>
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Terms & Conditions</li>
+                            <li className="text-gray-300 hover:text-white cursor-pointer">Privacy Policy</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div style={{ textAlign: 'center', color: "#ddd", fontSize: '8px' }}>
-                    <h1 style={{ marginTop: '100px', fontWeight: '300' }}>© 2024 Nouvs lab. All Rights Reserved</h1>
+                <div className="text-center text-gray-400 text-xs mt-16">
+                    <h1 className="font-light">© 2024 Novus Lab. All Rights Reserved</h1>
                 </div>
-
-            </Container>
+            </div>
         </footer>
-
-
-
-    )
-}
+    );
+};
 
 export default Footer;

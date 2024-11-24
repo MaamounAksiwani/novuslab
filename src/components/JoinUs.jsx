@@ -12,8 +12,8 @@ const JoinUs = () => {
         alignItems: 'center',
         textAlign: 'center'
       }}>
-        <h1>Join Us on our Journey</h1>
-        <p>Regardless of your role, visionary entrepreneur, well-established <br /> business, or individual with a dream looking
+        <h1 className='text-center text-3xl md:text-4xl font-medium mb-10'>Join Us on our Journey</h1>
+        <p className='text-gray-500 mb-4'>Regardless of your role, visionary entrepreneur, well-established <br /> business, or individual with a dream looking
           for the appropriate team, Novus lab can help you achieve your goals
         </p>
         <button style={{ display: 'flex', alignItems: 'center' }}>

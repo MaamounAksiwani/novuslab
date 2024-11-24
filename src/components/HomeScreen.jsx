@@ -28,7 +28,6 @@ const HomeScreen = () => {
             <WeCanDo/>
             <ProudlyCertified/>
             <HowDoWeWork/>
-            {/* <Footer/> */}
         </section>
 
 

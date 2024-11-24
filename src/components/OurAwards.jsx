@@ -53,40 +53,40 @@ const OurAwards = () => {
                         <img src='https://storage.googleapis.com/mc-blog-uploads/2021/12/Team-1.png' alt='not found' />
                     </div>
                     <div>
-                        {/* <p>WHAT WE OFFER</p> */}
-                        <h1 style={{fontSize:'28px'}}>
+                        <h1 className='text-lg mb-5'>
                             Our Awards 
                         </h1>
-                        <div className='ContainerCollapse'>
-                            <div>
-                                {content.map((item) => (
-                                    <div className='collapse-box' key={item.id}>
-                                        <div className={openIndex === item.id ? 'no-border IconButton active' : 'border IconButton'}  onClick={() => handleToggle(item.id)}>
-                                            {openIndex === item.id ? <RemoveIcon className='iconStyle' /> : <AddIcon className='iconStyle' />}
-                                            <h3 
-                                                
-                                                onClick={() => handleToggle(item.id)}
-                                            >
-                                                {item.title}
-                                            </h3>
-                                        </div>
-                                        <Collapse in={openIndex === item.id} className='Collapse'>
-                                            {item.point && item.point.length > 0 ? (
-                                                <ul>
-                                                    {item.point.map((ele, index) => (
-                                                        <li key={index}>{`${ele} ${index}`}</li>
-                                                    ))}
-                                                </ul>
-                                            ) : (
-                                                <p className={openIndex === item.id ? 'border' : 'no-border'}>
-                                                    {item.description}
-                                                </p>
-                                            )}
-                                        </Collapse>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        <div className="space-y-4">
+        {content.map((item) => (
+          <div className="collapse-box" key={item.id}>
+            <div
+              className={`flex items-center justify-between px-4 py-2 border rounded-lg ${
+                openIndex === item.id ? 'border-gray-500' : 'border-gray-300'
+              }`}
+              onClick={() => handleToggle(item.id)}
+            >
+                  <h3 className="cursor-pointer">{item.title}</h3>
+              {openIndex === item.id ? (
+                <RemoveIcon className="iconStyle" />
+              ) : (
+                <AddIcon className="iconStyle" />
+              )}
+            
+            </div>
+            <Collapse in={openIndex === item.id} className="Collapse">
+              {item.point && item.point.length > 0 ? (
+                <ul className="mt-2 space-y-1">
+                  {item.point.map((ele, index) => (
+                    <li key={index}>{`${ele} ${index}`}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-2">{item.description}</p>
+              )}
+            </Collapse>
+          </div>
+        ))}
+      </div>
                     </div>
                 </div>
             </Container>

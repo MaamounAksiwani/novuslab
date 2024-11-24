@@ -30,66 +30,31 @@ const Portfolio = () => {
 }, []);
     return (
         <>
-          <section className='Portfolio-section'>
-      <div className="join-us-text" style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center'
-      }}>
-       <Container maxWidth='lg'>
-       <h1>Novus Lab, where Digital Dreams Become Long-Term Success Stories!</h1>
-       <p>
-       We’re more than just a one-time supplier, we’re a dedicated, long-term collaborator in your success. Our staff, which is made up of seasoned professionals with years of experience, takes pride in providing excellence. With a wealth of knowledge we can handle any complexity or obstacle with assurance.
+<section className="py-32 bg-gradient-to-t from-white to-teal-100">
+  <div className="flex flex-col items-center text-center">
+    <Container maxWidth="lg">
+      <h1 className="text-3xl  mb-6">
+        Novus Lab, where Digital Dreams Become Long-Term Success Stories!
+      </h1>
+      <p className="text-lg font-light mb-8">
+        We’re more than just a one-time supplier, we’re a dedicated, long-term collaborator in your success. Our staff, which is made up of seasoned professionals with years of experience, takes pride in providing excellence. With a wealth of knowledge we can handle any complexity or obstacle with assurance.
+      </p>
 
+      <ArrowDownwardIcon
+  onClick={handleScroll}
+  className="border-2 border-teal-600 rounded-full p-5 cursor-pointer"
+/>
 
-        </p>
-        
-          <ArrowDownwardIcon             onClick={handleScroll}
- style={{ border: '1px solid #1F5755' ,cursor:'pointer' ,  borderRadius:'25px', padding:'20px' }} />
-    
+    </Container>
+  </div>
+</section>
 
-       </Container>
-      </div>
-
-
-    </section>
            
-
-
-
-
 
            <Container  ref={scrollToRef} maxWidth='lg'>
             <OurClients/>
           <WhatSetsUsApart/> 
            </Container>
-
-           {/* <header className="header ReadyToJoin">
-            <Container maxWidth='lg'>
-            <div className="right-side">
-    <img
-        src="https://www.novuslab.io/Intersection-1.png"
-        alt="Placeholder"
-        className="header-image"
-    />
-</div>
-
-<div className="left-side">
-    <h1 className="title">Digital excellence from design to development</h1>
-    <p className="description">
-    We’ll guide you through the ever-evolving digital landscape of design, software, and cloud solutions.
-    </p>
-    <button className='cta-button' style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center' }}>
-        Get in touch
-        <ArrowForwardIcon style={{ marginLeft: '8px' }} />
-    </button>
-</div>
-
-            </Container>
-</header> */}
-
         </>
     );
 }

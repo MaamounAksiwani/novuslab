@@ -76,42 +76,45 @@ const ValuePeople = () => {
 
     return (
         <>
-            <section style={{ paddingBottom: '75px'}}>
-                <div style={{ textAlign: 'center' }}>
-                    <h1 style={{ textAlign: 'center', fontWeight: '500', marginBottom: '10px' }}>We are people who value people
+            <section className='py-20'>
+                <div>
+                    <h1 className='font-medium text-lg mb-6 text-center'>We are people who value people
                     </h1>
                 </div>
 
-                <div className='ContainerCollapse'>
-                    <div>
-                        {content.map((item) => (
-                            <div className='collapse-box' key={item.id}>
-                                <div className={openIndex === item.id ? 'no-border IconButton active' : 'border IconButton'} onClick={() => handleToggle(item.id)}>
-                                    {openIndex === item.id ? <RemoveIcon className='iconStyle' /> : <AddIcon className='iconStyle' />}
-                                    <h3
-
-                                        onClick={() => handleToggle(item.id)}
-                                    >
-                                        {item.title}
-                                    </h3>
-                                </div>
-                                <Collapse in={openIndex === item.id} className='Collapse'>
-                                    {item.point && item.point.length > 0 ? (
-                                        <ul>
-                                            {item.point.map((ele, index) => (
-                                                <li key={index}>{`${ele} ${index}`}</li>
-                                            ))}
-                                        </ul>
-                                    ) : (
-                                        <p className={openIndex === item.id ? 'border' : 'no-border'}>
-                                            {item.description}
-                                        </p>
-                                    )}
-                                </Collapse>
-                            </div>
-                        ))}
-                    </div>
+                <div className="space-y-4  max-w-6xl mx-auto">
+          {content.map((item) => (
+            <div key={item.id} className="border rounded-lg shadow-md">
+              <div
+                className={`flex items-center justify-between p-4 cursor-pointer ${
+                  openIndex === item.id ? "bg-gray-100" : ""
+                }`}
+                onClick={() => handleToggle(item.id)}
+              >
+               
+                <h3 className="ml-4 text-lg font-medium">{item.title}</h3>
+                {openIndex === item.id ? (
+                  <RemoveIcon className="text-xl text-teal-600" />
+                ) : (
+                  <AddIcon className="text-xl text-teal-600" />
+                )}
+              </div>
+              <Collapse in={openIndex === item.id}>
+                <div className="p-4">
+                  {item.point && item.point.length > 0 ? (
+                    <ul className="list-disc pl-6">
+                      {item.point.map((ele, index) => (
+                        <li key={index}>{`${ele} ${index}`}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>{item.description}</p>
+                  )}
                 </div>
+              </Collapse>
+            </div>
+          ))}
+        </div>
 
             </section>
 
